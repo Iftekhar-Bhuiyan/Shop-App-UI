@@ -1,7 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:online_shop/constants.dart';
 import 'package:online_shop/models/Product.dart';
+import 'add_to_cart.dart';
 import 'color_and_gear.dart';
+import 'counter_with_fav_button.dart';
 import 'description.dart';
 import 'product_title_with_image.dart';
 
@@ -38,8 +40,12 @@ class Body extends StatelessWidget {
                   child: Column(
                     children: <Widget>[
                       ColorAndGear(product: product),
+                      SizedBox(height: kDefaultPadding / 2),
                       Description(product: product),
-                      CartCounter(),
+                      SizedBox(height: kDefaultPadding / 2),
+                      CounterWithFavBtn(),
+                      SizedBox(height: kDefaultPadding / 2),
+                      AddToCart(product: product)
                     ],
                   ),
                 ),
@@ -48,51 +54,6 @@ class Body extends StatelessWidget {
             ),
           )
         ],
-      ),
-    );
-  }
-}
-
-class CartCounter extends StatefulWidget {
-  CartCounter({Key key}) : super(key: key);
-
-  @override
-  _CartCounterState createState() => _CartCounterState();
-}
-
-class _CartCounterState extends State<CartCounter> {
-  int numOfItems = 1;
-  @override
-  Widget build(BuildContext context) {
-    return Row(
-      children: <Widget>[
-        buildOutlineButton(
-          icon: Icons.remove,
-          press: () {},
-        ),
-        Padding(
-          padding: const EdgeInsets.symmetric(horizontal: kDefaultPadding / 2),
-          child: Text(
-            "01",
-            style: Theme.of(context).textTheme.headline6,
-          ),
-        ),
-        buildOutlineButton(icon: Icons.add, press: () {}),
-      ],
-    );
-  }
-
-  SizedBox buildOutlineButton({IconData icon, Function press}) {
-    return SizedBox(
-      width: 40,
-      height: 32,
-      child: OutlinedButton(
-        padding: EdgeInsets.zero,
-        shape: RoundedRectangleBorder(
-          borderRadius: BorderRadius.circular(13),
-        ),
-        onPressed: press,
-        child: Icon(icon),
       ),
     );
   }
