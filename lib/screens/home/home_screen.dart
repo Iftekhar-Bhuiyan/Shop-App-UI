@@ -22,20 +22,22 @@ class HomeScreen extends StatelessWidget {
         icon: SvgPicture.asset("assets/icons/back.svg"),
         onPressed: () {},
       ),
-      actions: [
+      actions: <Widget>[
         IconButton(
-          icon: SvgPicture.asset("assets/icons/search.svg"),
-          color: kTextColor,
+          icon: SvgPicture.asset(
+            "assets/icons/search.svg",
+            color: kTextColor,
+          ),
           onPressed: () {},
         ),
         IconButton(
-          icon: SvgPicture.asset("assets/icons/cart.svg"),
-          color: kTextColor,
+          icon: SvgPicture.asset(
+            "assets/icons/cart.svg",
+            color: kTextColor,
+          ),
           onPressed: () {},
         ),
-        SizedBox(
-          width: kDefaultPadding / 2,
-        )
+        SizedBox(width: kDefaultPadding / 2)
       ],
     );
   }

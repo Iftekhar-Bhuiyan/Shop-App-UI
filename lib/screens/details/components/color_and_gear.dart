@@ -41,12 +41,12 @@ class ColorAndGear extends StatelessWidget {
                   text: "Gear\n",
                 ),
                 TextSpan(
-                  text: "${product.gear}",
+                  text: "${product.gear} s",
                   style: Theme.of(context)
                       .textTheme
                       .headline5
                       .copyWith(fontWeight: FontWeight.bold),
-                ),
+                )
               ],
             ),
           ),
@@ -69,8 +69,10 @@ class ColorDot extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      margin:
-          EdgeInsets.only(top: kDefaultPadding / 4, right: kDefaultPadding / 2),
+      margin: EdgeInsets.only(
+        top: kDefaultPadding / 4,
+        right: kDefaultPadding / 2,
+      ),
       padding: EdgeInsets.all(2.5),
       height: 24,
       width: 24,

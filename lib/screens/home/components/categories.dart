@@ -43,7 +43,7 @@ class _CategoriesState extends State<Categories> {
         padding: const EdgeInsets.symmetric(horizontal: kDefaultPadding),
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
-          children: [
+          children: <Widget>[
             Text(
               categories[index],
               style: TextStyle(
